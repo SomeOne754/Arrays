@@ -1,0 +1,24 @@
+<?php
+$array = [];
+$array[2] = ["name" => "Bill", "email" => "Bill@gmail.com"];
+$array[3] = ["name" => "Mark", "email" => "Mark@gmail.com"];
+$array[7] = ["name" => "Vano", "email" => "Vano@gmail.com"];
+$array[8] = ["name" => "Stavno", "email" => "Stavno@gmail.com"];
+$array[4] = ["name" => "Valera", "email" => "Valera@gmail.com"];
+$array[5] = ["name" => "Borya", "email" => "Borya@gmail.com"];
+$array[6] = ["name" => "Alex", "email" => "Alex@gmail.com"];
+echo sizeof($array);
+krsort($array);
+var_dump($array);
+$min = end($array);
+echo "Min - ";
+var_export($min);
+var_dump(next($min));
+$max = reset($array);
+echo "Max - ";
+var_export($max);
+$almostMax = prev($max);
+echo "Deleting elements from array";
+$delet = array_search( $min, $array, true);
+unset($array[$delet]);
+var_export($array);
